@@ -11,7 +11,7 @@ const dashboardRoutes = require('./routes/dashboardRoutes'); // Replace with you
 const recipeRoutes = require('./routes/recipes.js');// Spoonacular API Routing
 const userRoutes = require('./routes/userRoutes.js')
 const bodyParser = require('body-parser'); //import body-parser; parse json and url data from requests
-
+const cors = require("cors");
 const PORT = process.env.PORT || 3001;
 const apiKey = process.env.SPOONACULAR_API_KEY;
 
@@ -19,7 +19,7 @@ const apiKey = process.env.SPOONACULAR_API_KEY;
 require('dotenv').config();
 
 const app = express();
-
+app.use(cors());
 //this is for the body parse middleware to parse url and json data 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extend: false }));

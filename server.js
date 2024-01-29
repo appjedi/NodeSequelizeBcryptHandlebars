@@ -20,6 +20,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors());
+
 //this is for the body parse middleware to parse url and json data 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extend: false }));
